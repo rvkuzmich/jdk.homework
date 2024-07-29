@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServerController {
-    boolean work;
+    private boolean work;
     private List<ClientController> clientsList;
     private final ServerView serverView;
-    private final FileStorage fileStorage;
+    private final ServerRepository serverRepository;
 
     /**@apiNote
      * Конструктор контроллера сервера
      * @param serverView объект графического интерфейса сервера
-     * @param fileStorage объект файлового хранилища
+     * @param serverRepository объект файлового хранилища
      */
-    public ServerController(ServerView serverView, FileStorage fileStorage) {
+    public ServerController(ServerView serverView, ServerRepository serverRepository) {
         this.serverView = serverView;
-        this.fileStorage = fileStorage;
+        this.serverRepository = serverRepository;
         clientsList = new ArrayList<>();
         serverView.setServerController(this);
     }
@@ -104,7 +104,7 @@ public class ServerController {
      * @return Возвращает лог сообщений
      */
     public String getHistory() {
-        return fileStorage.readLog();
+        return serverRepository.readLog();
     }
 
     /**@apiNote
@@ -112,7 +112,7 @@ public class ServerController {
      * @param text текст сохраняемого сообщения
      */
     private void saveLogToFile(String text) {
-        fileStorage.saveInLog(text);
+        serverRepository.saveInLog(text);
     }
 
     /**@apiNote
