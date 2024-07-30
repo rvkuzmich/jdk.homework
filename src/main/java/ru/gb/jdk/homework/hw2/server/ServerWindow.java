@@ -31,7 +31,6 @@ public class ServerWindow extends JFrame implements ServerView {
         setResizable(false);
         setTitle("Chat server");
         setLocationRelativeTo(null);
-        serverController = new ServerController(this, new FileStorage());
     }
 
     /**@apiNote
