@@ -25,6 +25,9 @@ public class Calculator {
     }
 
     static <T extends Number> void divide(T num1, T num2) {
+        if (num2.doubleValue() == 0) {
+            throw new ArithmeticException("Деление на 0 запрещено");
+        }
         if (num1 != null && num2 != null) {
             result = num1.doubleValue() / num2.doubleValue();
         } else {
