@@ -15,7 +15,7 @@ public class Game {
         this.doorsNumber = doorsNumber;
     }
 
-    HashMap<Integer, Boolean> game(int iterations, boolean changeDoor) {
+    HashMap<Integer, Boolean> start(int iterations, boolean changeDoor) {
         int hostDoor = -10;
         int playerSecondChoice = -10;
         HashMap<Integer, Boolean> result = new HashMap<>();

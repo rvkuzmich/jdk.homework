@@ -21,9 +21,9 @@ public class Main {
     public static void main(String[] args) {
         Game game = new Game(3);
 
-        resultsWithSameDoor = game.game(numberOfIterations, false);
+        resultsWithSameDoor = game.start(numberOfIterations, false);
 
-        resultsWithOtherDoor = game.game(numberOfIterations, true);
+        resultsWithOtherDoor = game.start(numberOfIterations, true);
         System.out.println();
         System.out.println("Статистика при отказе от изменения двери");
         System.out.println();
